@@ -1,0 +1,38 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.locator('body').press('ControlOrMeta+ArrowLeft');
+  await page.goto('https://www.google.com/search?q=saucedemo&oq=saucedemo&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCTMwMTg4ajBqMqgCALACAQ&sourceid=chrome&ie=UTF-8');
+  await page.goto('https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsaucedemo%26oq%3Dsaucedemo%26gs_lcrp%3DEgZjaHJvbWUyBggAEEUYOdIBCTMwMTg4ajBqMqgCALACAQ%26sourceid%3Dchrome%26ie%3DUTF-8%26sei%3DbW7HaoPFD9mkhvcPtJ6CyA8&q=EgSLBR2TGO3cndYGIjAugfaauLq4H4OQ5BjV_9onMfG39dc59WLCDxAnzeja6I-B7GY2ZTm5w2Wg0kn-q1gyAVJaAUNg-Oj81Z7ylMvaAQ');
+  await page.locator('iframe[name="a-njvmr31vrh1h"]').contentFrame().getByRole('checkbox', { name: 'I\'m not a robot' }).click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().locator('[id="4"]').click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().locator('[id="5"]').click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().locator('[id="8"]').click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().locator('[id="9"]').click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().getByRole('button', { name: 'Next' }).click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().locator('[id="5"]').click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().locator('[id="9"]').click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().getByRole('button', { name: 'Next' }).click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().locator('[id="6"]').click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().locator('[id="5"]').click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().locator('[id="9"]').click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().locator('[id="10"]').click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().getByRole('button', { name: 'Next' }).click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().locator('[id="10"]').click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().locator('[id="9"]').click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().locator('[id="6"]').click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().getByRole('button', { name: 'Next' }).click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().locator('[id="5"]').click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().locator('[id="4"]').click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().locator('[id="9"]').click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().locator('[id="8"]').click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().locator('[id="1"]').click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().locator('[id="0"]').click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().getByRole('button', { name: 'Verify' }).click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().locator('[id="5"]').click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().locator('[id="8"]').click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().locator('[id="2"]').click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().locator('[id="2"]').click();
+  await page.locator('iframe[name="c-njvmr31vrh1h"]').contentFrame().getByRole('button', { name: 'Verify' }).click();
+  await page.getByRole('link', { name: 'Sauce Demo Sauce Demo https' }).click();
+});
