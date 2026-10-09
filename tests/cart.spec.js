@@ -27,6 +27,8 @@ test.describe('cart', () => {
     await inventory.openCart();
 
     await expect(page).toHaveURL(/cart/);
-    await expect(page.locator('[data-test="inventory-item-name"]')).toHaveText('Sauce Labs Backpack');
+    const cartItems = page.locator('[data-test="cart-list"] [data-test="inventory-item-name"]');
+await expect(cartItems).toHaveCount(1);
+await expect(cartItems).toHaveText('Sauce Labs Backpack');
   });
 });
