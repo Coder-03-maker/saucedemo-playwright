@@ -15,6 +15,9 @@ End-to-end UI tests for [SauceDemo](https://www.saucedemo.com), a practice e-com
 - Adding and removing an item updates the cart badge
 - An added item appears on the cart page
 
+**Checkout**
+- User can complete a purchase from cart to order confirmation
+
 ## Tech stack
 
 - Playwright (`@playwright/test`)
@@ -27,9 +30,12 @@ End-to-end UI tests for [SauceDemo](https://www.saucedemo.com), a practice e-com
 pages/
   LoginPage.js        # locators and actions for the login page
   InventoryPage.js    # locators and actions for the products page
+  CartPage.js         # locators and actions for the cart page
+  CheckoutPage.js     # locators and actions for the checkout pages
 tests/
   login.spec.js
   cart.spec.js
+  checkout.spec.js
 playwright.config.js
 .github/workflows/playwright.yml
 ```
@@ -59,9 +65,9 @@ npx playwright show-report
 - **Page Object Model:** locators live in `pages/`, so a UI change is fixed in one place instead of in every test.
 - **Locators:** uses SauceDemo's `data-test` attributes, which are more stable than CSS classes or XPath.
 - **Shared setup:** cart tests log in through `test.beforeEach`.
+- **Flaky test fix:** a cart assertion passed locally but failed in CI because it matched the product list while the page was still changing. Scoping the locator to the cart list fixed it.
 - **CI:** every push runs the full suite and uploads the HTML report as an artifact.
 
 ## Planned
 
-- Checkout flow test
 - `problem_user` tests to catch the site's intentional bugs
